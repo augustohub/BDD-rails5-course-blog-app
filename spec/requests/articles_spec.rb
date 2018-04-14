@@ -19,7 +19,7 @@ RSpec.describe 'Articles', type: :request do
       before { get "/articles/#{@article.id + 10}" }
 
       it 'handles not existing article' do
-        expect(response.status).to eql(404)
+        expect(response.status).to eql(302)
         flash_message = 'The article you are looking for could not be found'
         expect(flash[:alert]).to eql(flash_message)
       end
