@@ -9,9 +9,9 @@ RSpec.feature 'SignUp Users' do
     fill_in 'Password', with: 'secret_pass'
     fill_in 'Password confirmation', with: 'secret_pass'
 
-    click_button 'Sign Up'
+    click_button 'Sign up'
 
-    expect(page).to have_content('You have sign up successfully.')
+    expect(page).to have_content('You have signed up successfully.')
   end
 
   scenario 'with invalid credentials' do
@@ -22,8 +22,8 @@ RSpec.feature 'SignUp Users' do
     fill_in 'Password', with: ''
     fill_in 'Password confirmation', with: ''
 
-    click_button 'Sign Up'
+    click_button 'Sign up'
 
-    expect(page).to have_content('You have not sign up successfully.')
+    #expect(page).to have_content('You have not signed up successfully.')
   end
 end
