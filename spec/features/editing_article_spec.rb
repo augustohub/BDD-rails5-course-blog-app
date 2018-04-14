@@ -19,7 +19,7 @@ RSpec.feature 'Editing an Article' do
     expect(page).to have_content('Article has been updated')
     expect(page).to have_content(h2, 'Updated Article Title')
     expect(page).to have_content('Updated Article content Body')
-    expect(page.current_path).to eql(article_path(@article)
+    expect(page.current_path).to eql(article_path(@article))
   end
 
   scenario 'user fail to update an article' do
@@ -32,6 +32,7 @@ RSpec.feature 'Editing an Article' do
     click_button 'Update'
     
     expect(page).to have_content('Article has not been updated')
-    expect(page.current_path).to eql(edit_article_path(@article)
+    expect(page.current_path).to eql(edit_article_path(@article))
   end
+  
 end
