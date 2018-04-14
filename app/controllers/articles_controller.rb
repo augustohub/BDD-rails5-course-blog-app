@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
+  before_action :find_article, only: %i[show edit]
+
   def index;
     @articles = Article.all
   end
 
-  def show
-    @article = Article.find(params[:id].to_i)
-  end
+  def show; end
 
   def new
     @article = Article.new
@@ -22,6 +22,8 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit; end
+
   protected
 
   def resource_not_found
@@ -31,6 +33,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def find_article
+    @article = Article.find(params[:id].to_i)
+  end
 
   def article_params
     params.require(:article).permit(:title, :body)
