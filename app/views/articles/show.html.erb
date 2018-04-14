@@ -1,3 +1,8 @@
 <h2><%= @article.title %></h2>
-<small class="text-secondary"><b>Published by Author on <%= @article.created_at.strftime("%d/%m/%Y às %H:%M") %></b></small>
+<small class="text-secondary">
+  <b>Published by Author on
+    <%= @article.created_at.strftime("%d/%m/%Y às %H:%M") %>
+  </b>
+  <%= link_to 'Edit', edit_article_path %>
+</small>
 <p><%= @article.body %></p>
